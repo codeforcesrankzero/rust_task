@@ -1,4 +1,3 @@
-use core::num;
 use std::sync::Arc;
 use std::thread;
 use std::sync::Mutex;
@@ -15,8 +14,6 @@ use num_cpus;
 /// let squares = rust_test::split_work(vector, |x| x * x , 2);
 /// assert_eq!(squares, &[1, 4, 9]);
 /// ```
-/// 
-
 pub fn split_work<T, R>(input: Vec<T>, f: fn(T) -> R, threshold: usize) -> Vec<R>
 where
     T: Send + 'static + std::marker::Sync + Copy,
@@ -49,11 +46,9 @@ where
             }
         }));
     }
-
     for thread in threads {
         thread.join().unwrap();
     }
-
     let lock = Arc::try_unwrap(result_mutex).expect("Rc unwrap failed!");
     lock.into_inner().expect("Mutex into_inner failed!")
 }
