@@ -16,7 +16,7 @@ mod different_types_test {
         let f = |num: char| -> bool {
             num.is_ascii()
         };
-        let threshold = 1;
+        let threshold = 1;     
         assert_eq!(split_work(input, f, threshold), &[true, true]);
     }
 
