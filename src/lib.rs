@@ -6,6 +6,7 @@ use num_cpus;
 /// Split computing of function f over collection input into threads
 /// Amount of threads is length of collection divided by threshold
 /// # Examples
+/// Test edit PR
 ///
 /// Basic usage:
 ///
