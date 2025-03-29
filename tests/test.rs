@@ -1,7 +1,7 @@
 use rust_test::split_work;
 
 #[cfg(test)]
-mod different_types_test {
+mod different_types_testpr_test {
     use super::*;
     #[test]
     fn int_array() {
